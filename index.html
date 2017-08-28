@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,10 +18,32 @@
     <![endif]-->
   </head>
   <body>
-    
+    <div class='container '>
+      <div class="jumbotron">
+        <h1>Trivia Game</h1>
+        <p></p>
+      </div>
+      <!-- timer -->
+      <div id="count-down">
+        <p>Time Remaining:</p><span id='timer'>123</span>
+      </div>
+
+      <div class='container '>
+        <div class="col-lg-12">
+          <div id="triviaQuestions">
+            <div >
+              <p>text before</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/app.js" charset="utf-8"></script>
   </body>
 </html>
