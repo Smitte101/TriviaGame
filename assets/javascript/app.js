@@ -21,18 +21,26 @@ $(document).ready(function () {
       answer: 'horrible'
     }
   ]
+  var answer
   function questionCreater(){
     console.log("question count as we go", questionCounter);
     for (var i = questionCounter; i < questionArray.length; i++) {
     var question = questionArray[i].question;
     var answersArray  = questionArray[i].answers
-    var answer
     var answershtml = '';
+    var questionhtml = '';
+    if (i === questionCounter) {
+
+      questionhtml += '<div>';
+      questionhtml += '<p>' + question + '</p>';
+      questionhtml += '</div>'
+    }
+
     for (var j = 0; j < answersArray.length; j++) {
       answersArray[j]
       console.log('conditin check', i, questionCounter);
       if (i === questionCounter){
-        
+
 
         answer = questionArray[i].answer
         answershtml += '<button class="btn btn-primary buttonAnswer">';
@@ -41,20 +49,22 @@ $(document).ready(function () {
       }
     }
     // console.log('answershtml', answershtml);
+    triviaQuestions.append(questionhtml)
     triviaQuestions.append(answershtml)
-    $('.buttonAnswer').click(function(e){
-      e.preventDefault();
-      var clickedAnswer = $(this).text()
-      if (clickedAnswer === answer) {
-        questionCounter += 1;
-        console.log(questionCounter,'questionCounter');
-        triviaQuestions.html('');
-        questionCreater()
-      }
-      console.log('elementclicked', $(this).text(), answer);
-    })
+
 
   }}
+  $('#triviaQuestions').on('click','.buttonAnswer',function(e){
+    e.preventDefault();
+    var clickedAnswer = $(this).text()
+    if (clickedAnswer === answer) {
+      questionCounter += 1;
+      console.log(questionCounter,'questionCounter');
+      triviaQuestions.html('');
+      questionCreater()
+    }
+    console.log('elementclicked', $(this).text(), answer);
+  })
   questionCreater()
     triviaQuestions.prepend(html)
 
